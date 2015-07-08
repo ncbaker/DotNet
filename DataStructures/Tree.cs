@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace NCB.DataStructures
+namespace ProgrammingProblems.DataStructures
 {
     #region Node
     public class Node<T>

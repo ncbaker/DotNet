@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NCB.DataStructures
+namespace ProgrammingProblems.DataStructures
 {
     public static class TreeFactory
     {

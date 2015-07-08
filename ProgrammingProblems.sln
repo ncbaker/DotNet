@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCB.DataStructures", "DataStructures\NCB.DataStructures.csproj", "{8A6B4DC4-EA23-40D7-A144-15F9C871A4A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.DataStructures", "DataStructures\ProgrammingProblems.DataStructures.csproj", "{8A6B4DC4-EA23-40D7-A144-15F9C871A4A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCB.Windows", "Windows\NCB.Windows.csproj", "{C83AF0CD-074F-430B-BAD3-FDA7957B2C85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.Windows", "Windows\ProgrammingProblems.Windows.csproj", "{C83AF0CD-074F-430B-BAD3-FDA7957B2C85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

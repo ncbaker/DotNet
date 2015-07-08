@@ -7,8 +7,8 @@
     <ProjectGuid>{C83AF0CD-074F-430B-BAD3-FDA7957B2C85}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NCB.Windows</RootNamespace>
-    <AssemblyName>NCB.Windows</AssemblyName>
+    <RootNamespace>ProgrammingProblems.Windows</RootNamespace>
+    <AssemblyName>ProgrammingProblems.Windows</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -85,9 +85,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataStructures\NCB.DataStructures.csproj">
+    <ProjectReference Include="..\DataStructures\ProgrammingProblems.DataStructures.csproj">
       <Project>{8a6b4dc4-ea23-40d7-a144-15f9c871a4a8}</Project>
-      <Name>NCB.DataStructures</Name>
+      <Name>ProgrammingProblems.DataStructures</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

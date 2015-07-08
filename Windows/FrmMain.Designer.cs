@@ -1,4 +1,4 @@
-﻿namespace NCB.Windows
+﻿namespace ProgrammingProblems.Windows
 {
     partial class FrmMain
     {

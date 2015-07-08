@@ -7,8 +7,8 @@
     <ProjectGuid>{8A6B4DC4-EA23-40D7-A144-15F9C871A4A8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NCB.Data</RootNamespace>
-    <AssemblyName>NCB.Data</AssemblyName>
+    <RootNamespace>ProgrammingProblems.DataStructures</RootNamespace>
+    <AssemblyName>ProgrammingProblems.DataStructures</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
