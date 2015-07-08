@@ -20,7 +20,7 @@ namespace ProgrammingProblems.Windows
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            button1_Click(null, null);
+             button1_Click(null, null);
         }
 
         public void BuildTree(BinaryTree<int> tree)
