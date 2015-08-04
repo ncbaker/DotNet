@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace ProgrammingProblems.DataStructures
 {
@@ -11,13 +11,23 @@ namespace ProgrammingProblems.DataStructures
                         2
                 searching 7 return {3,4}, {2,5}, {2, 5, -2, 2}
          */
-        public static SummaryBinaryTree<int> GetCareerCupTree()
+        public static SummaryBinaryTree GetCareerCupTree()
         {
-            SummaryBinaryNode<int> a = new SummaryBinaryNode<int>(3, 4, 8);
-            SummaryBinaryNode<int> b = new SummaryBinaryNode<int>(5, 6, -2);
-            SummaryBinaryTree<int> tree = new SummaryBinaryTree<int>(new SummaryBinaryNode<int>(2, a, b));
+            SummaryBinaryNode a = new SummaryBinaryNode(3, 4, 8);
+            SummaryBinaryNode b = new SummaryBinaryNode(5, 6, -2);
+            SummaryBinaryTree tree = new SummaryBinaryTree(new SummaryBinaryNode(2, a, b));
 
-            tree.Root.RightNode.RightNode.RightNode = new SummaryBinaryNode<int>(2);
+            tree.Root.RightNode.RightNode.RightNode = new SummaryBinaryNode(2);
+
+            return tree;
+        }
+        public static SimpleBinaryNode GetCareerCupTreeSimple()
+        {
+            SimpleBinaryNode a = new SimpleBinaryNode(3, 4, 8);
+            SimpleBinaryNode b = new SimpleBinaryNode(5, 6, -2);
+            SimpleBinaryNode tree = new SimpleBinaryNode(2, a, b);
+
+            tree.RightNode.RightNode.RightNode = new SimpleBinaryNode(2);
 
             return tree;
         }

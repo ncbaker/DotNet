@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,11 +9,14 @@ namespace ProgrammingProblems.DataStructures
     #region Node
     public class Node<T>
     {
+        #region properties
         private NodeList<T> _children;
-
         public T Value { get; protected set; }
         public NodeList<T> Children { get { return _children; } protected set { _children = value; } }
+        #endregion
 
+
+        #region constructors
         public Node() { _children = new NodeList<T>(); }
         public Node(T value) : this(value, new NodeList<T>()) {}
         public Node(T value, NodeList<T> nodes)
@@ -21,6 +24,7 @@ namespace ProgrammingProblems.DataStructures
             Value = value;
             _children = nodes;
         }
+        #endregion
     }
 
     public class NodeList<T> : Collection<Node<T>>
@@ -54,26 +58,30 @@ namespace ProgrammingProblems.DataStructures
     #region Binary Tree
     public class BinaryNode<T> : Node<T>
     {
-        public bool Added { get; set; }
+        #region properties
         public bool HasChildren { get { return Children.Count > 0; } }
-        public BinaryNode<T> Parent { get; private set; }
+        public BinaryNode<T> Parent { get; protected set; }
         public BinaryNode<T> LeftNode { get { return GetNodeAt(0); } set { SetNodeAt(0, value); } }
         public BinaryNode<T> RightNode { get { return GetNodeAt(1); } set { SetNodeAt(1, value); } }
+        #endregion 
 
-        public BinaryNode() : base() { InitChildren(); }
-        public BinaryNode(T value) : base(value, null) { InitChildren(); }
+
+        #region constructors
+        public BinaryNode() : base() { Initialize(); }
+        public BinaryNode(T value) : base(value, null) { Initialize(); }
         public BinaryNode(T value, T left, T right)
             : this(value, new BinaryNode<T>(left), new BinaryNode<T>(right) ) { }
         public BinaryNode(T value, BinaryNode<T> left, BinaryNode<T> right) : this()
         {
             Value = value;
-            left.Parent = right.Parent = this;
-            
-            Children[0] = left;
-            Children[1] = right;
+            LeftNode = left;
+            RightNode = right;
         }
+        #endregion
 
-        private void InitChildren() { Children = new NodeList<T>(2); }
+
+        #region methods
+        private void Initialize() { Children = new NodeList<T>(2); }
 
         private BinaryNode<T> GetNodeAt(int index)
         {
@@ -83,12 +91,12 @@ namespace ProgrammingProblems.DataStructures
         private void SetNodeAt(int index, BinaryNode<T> node)
         {
             if (Children.Count == 0)
-                InitChildren();
+                Initialize();
 
             node.Parent = this;
             Children[index] = node;
         }
-
+        #endregion
     }
 
     public class BinaryTree<T>
@@ -104,36 +112,41 @@ namespace ProgrammingProblems.DataStructures
 
 
     #region Summary Binary Tree
-    public class SummaryBinaryNode<T> : BinaryNode<T>
+    public class SummaryBinaryNode : BinaryNode<int>
     {
+        internal bool Added { get; set; }
+        public new SummaryBinaryNode Parent { get { return (SummaryBinaryNode)base.Parent; } set { base.Parent = value; } }
+        public new SummaryBinaryNode LeftNode { get { return (SummaryBinaryNode)base.LeftNode; } set { base.LeftNode = value; } }
+        public new SummaryBinaryNode RightNode { get { return (SummaryBinaryNode)base.RightNode; } set { base.RightNode = value; } }
+
         public SummaryBinaryNode() : base() {}
-        public SummaryBinaryNode(T value) : base(value) { }
-        public SummaryBinaryNode(T value, T left, T right): base(value, left, right) {}
-        public SummaryBinaryNode(T value, BinaryNode<T> left, BinaryNode<T> right) : base(value, left, right) { }
+        public SummaryBinaryNode(int value) : base(value) { }
+        public SummaryBinaryNode(int value, int left, int right) : base(value, new SummaryBinaryNode(left), new SummaryBinaryNode(right)) { }
+        public SummaryBinaryNode(int value, SummaryBinaryNode left, SummaryBinaryNode right) : base(value, left, right) { }
     }
 
-    public class SummaryBinaryTree<T> : BinaryTree<T>
+    public class SummaryBinaryTree : BinaryTree<int>
     {
+        public new SummaryBinaryNode Root { get { return (SummaryBinaryNode)base.Root; } set { base.Root = value; } }
         public SummaryBinaryTree() {}
-        public SummaryBinaryTree(BinaryNode<T> root) { Root = root; }
+        public SummaryBinaryTree(SummaryBinaryNode root) { Root = root; }
 
         //Returns all combinations of branches & sub-branches of the tree.
-        public List<List<T>> ExplodeTree()
+        public List<List<int>> ExplodeTree()
         {
-            List<List<T>> list = new List<List<T>>();
+            List<List<int>> list = new List<List<int>>();
 
-            list.Add(new List<T>() { this.Root.Value });
+            list.Add(new List<int>() { this.Root.Value });
             list.AddRange(ExplodeNode(this.Root, list[0]));
 
-            ResetNode(this.Root);
+            ResetNode((SummaryBinaryNode)this.Root);
 
             return list;
         }
 
-        //Create a copy of the List adding the Left & Right nodes to the end of each List<int> 
-        private List<List<T>> ExplodeNode(BinaryNode<T> node, List<T> ancenstors)
+        private List<List<int>> ExplodeNode(SummaryBinaryNode node, List<int> ancenstors)
         {
-            List<List<T>> ancenstorsPlus = new List<List<T>>();
+            List<List<int>> ancenstorsPlus = new List<List<int>>();
 
             if (node.LeftNode != null)
                 ancenstorsPlus.AddRange(ExplodeChild(node.LeftNode, ancenstors));
@@ -144,23 +157,22 @@ namespace ProgrammingProblems.DataStructures
             return ancenstorsPlus;
         }
 
-        //Explode Child node and Recursively move down the inner branches until the leaves are reached.
-        private List<List<T>> ExplodeChild(BinaryNode<T> node, List<T> ancenstors)
+        private List<List<int>> ExplodeChild(SummaryBinaryNode node, List<int> ancenstors)
         {
-            List<List<T>> ancenstorsPlus = new List<List<T>>();
+            List<List<int>> ancenstorsPlus = new List<List<int>>();
             if (node == null)
                 return ancenstorsPlus;
 
             //add to existing branch
-            List<T> l = new List<T>(ancenstors);
+            List<int> l = new List<int>(ancenstors);
             l.Add(node.Value);
             ancenstorsPlus.Add(l);
             ancenstorsPlus.AddRange(ExplodeNode(node, l));
 
-            //begin as new branch   //(node as SummaryBinaryNode<T>)
+            //begin as new branch
             if (!node.Added)
             {
-                ancenstorsPlus.Add(new List<T>() { node.Value });
+                ancenstorsPlus.Add(new List<int>() { node.Value });
                 node.Added = true;
                 ancenstorsPlus.AddRange(ExplodeNode(node, ancenstorsPlus.Last()));
             }
@@ -168,12 +180,11 @@ namespace ProgrammingProblems.DataStructures
             return ancenstorsPlus;
         }
 
-        //returns every List whose sum is matches the total parameter
         public Dictionary<int, List<int>> SearchBranchSummaries(int total)
         {
             Dictionary<int, List<int>> v = new Dictionary<int, List<int>>();
 
-            List<List<int>> list = (this as SummaryBinaryTree<int>).ExplodeTree();
+            List<List<int>> list = (this as SummaryBinaryTree).ExplodeTree();
             
             for (int i = list.Count - 1; i >= 0; i--)
                 if (list[i].Sum() == total)
@@ -182,7 +193,7 @@ namespace ProgrammingProblems.DataStructures
             return v;
         }
 
-        private void ResetNode(BinaryNode<T> node)
+        private void ResetNode(SummaryBinaryNode node)
         {
             node.Added = false;
             if (node.LeftNode != null)
@@ -190,6 +201,33 @@ namespace ProgrammingProblems.DataStructures
             if (node.RightNode != null)
                 ResetNode(node.RightNode);
         }
+    }
+    #endregion
+
+
+    #region
+    public class SimpleBinaryNode
+    {
+        #region properties                
+        private SimpleBinaryNode _left, _right;
+        public int Value { get; protected set; }
+        public SimpleBinaryNode Parent { get; set; }
+        public SimpleBinaryNode LeftNode { get { return _left; } set { _left = value; _left.Parent = this; } }
+        public SimpleBinaryNode RightNode { get { return _right; } set { _right = value; _right.Parent = this; } }
+        #endregion
+
+
+        #region constructors
+        public SimpleBinaryNode() {}
+        public SimpleBinaryNode(int value) { Value = value; }
+        public SimpleBinaryNode(int value, int left, int right) : this(value, new SimpleBinaryNode(left), new SimpleBinaryNode(right)) { }
+        public SimpleBinaryNode(int value, SimpleBinaryNode left, SimpleBinaryNode right) 
+        { 
+            Value = value;
+            LeftNode = left;
+            RightNode = right;
+        }
+        #endregion
     }
     #endregion
 }
