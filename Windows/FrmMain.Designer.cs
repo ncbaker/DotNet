@@ -29,76 +29,87 @@ namespace ProgrammingProblems.Windows
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.problemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.careerCupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.binaryTreesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MdiTab = new Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager(this.components);
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MdiTab)).BeginInit();
             this.SuspendLayout();
             // 
-            // treeView1
+            // menuStrip1
             // 
-            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.treeView1.Location = new System.Drawing.Point(12, 41);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(355, 571);
-            this.treeView1.TabIndex = 1;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.problemsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(747, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // textBox1
+            // fileToolStripMenuItem
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox1.Location = new System.Drawing.Point(409, 41);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 571);
-            this.textBox1.TabIndex = 2;
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
             // 
-            // textBox2
+            // exitToolStripMenuItem
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox2.Location = new System.Drawing.Point(715, 41);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(269, 571);
-            this.textBox2.TabIndex = 3;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // button1
+            // problemsToolStripMenuItem
             // 
-            this.button1.Location = new System.Drawing.Point(13, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Load";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.problemsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.careerCupToolStripMenuItem});
+            this.problemsToolStripMenuItem.Name = "problemsToolStripMenuItem";
+            this.problemsToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.problemsToolStripMenuItem.Text = "Problems";
             // 
-            // textBox3
+            // careerCupToolStripMenuItem
             // 
-            this.textBox3.Location = new System.Drawing.Point(715, 13);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.Text = "7";
+            this.careerCupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.binaryTreesToolStripMenuItem});
+            this.careerCupToolStripMenuItem.Name = "careerCupToolStripMenuItem";
+            this.careerCupToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.careerCupToolStripMenuItem.Text = "Career Cup";
             // 
-            // Form1
+            // binaryTreesToolStripMenuItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.binaryTreesToolStripMenuItem.Name = "binaryTreesToolStripMenuItem";
+            this.binaryTreesToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.binaryTreesToolStripMenuItem.Text = "Binary Trees";
+            this.binaryTreesToolStripMenuItem.Click += new System.EventHandler(this.binaryTreesToolStripMenuItem_Click);
+            // 
+            // MdiTab
+            // 
+            this.MdiTab.MdiParent = this;
+            this.MdiTab.ViewStyle = Infragistics.Win.UltraWinTabbedMdi.ViewStyle.VisualStudio2005;
+            // 
+            // FrmMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 655);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.treeView1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(747, 532);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "FrmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Programming Problems";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MdiTab)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,12 +117,13 @@ namespace ProgrammingProblems.Windows
 
         #endregion
 
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem problemsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem careerCupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem binaryTreesToolStripMenuItem;
+        private Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager MdiTab;
     }
 }
 
