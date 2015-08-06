@@ -28,16 +28,13 @@ namespace ProgrammingProblems.Windows
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.problemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.careerCupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.binaryTreesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MdiTab = new Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager(this.components);
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MdiTab)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -89,11 +86,6 @@ namespace ProgrammingProblems.Windows
             this.binaryTreesToolStripMenuItem.Text = "Binary Trees";
             this.binaryTreesToolStripMenuItem.Click += new System.EventHandler(this.binaryTreesToolStripMenuItem_Click);
             // 
-            // MdiTab
-            // 
-            this.MdiTab.MdiParent = this;
-            this.MdiTab.ViewStyle = Infragistics.Win.UltraWinTabbedMdi.ViewStyle.VisualStudio2005;
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,7 +101,6 @@ namespace ProgrammingProblems.Windows
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MdiTab)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,7 +114,6 @@ namespace ProgrammingProblems.Windows
         private System.Windows.Forms.ToolStripMenuItem problemsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem careerCupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem binaryTreesToolStripMenuItem;
-        private Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager MdiTab;
     }
 }
 
