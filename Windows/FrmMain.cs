@@ -13,7 +13,7 @@ namespace ProgrammingProblems.Windows
 {
     public partial class FrmMain : Form
     {
-        #region menu clicks
+        #region constructor, load
         public FrmMain()
         {
             InitializeComponent();

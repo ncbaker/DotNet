@@ -85,14 +85,11 @@ namespace ProgrammingProblems.DataStructures
 
         private BinaryNode<T> GetNodeAt(int index)
         {
-            return Children.Count == 0 ? null : Children[index] as BinaryNode<T>;
+            return Children[index] as BinaryNode<T>;
         }
         
         private void SetNodeAt(int index, BinaryNode<T> node)
         {
-            if (Children.Count == 0)
-                Initialize();
-
             node.Parent = this;
             Children[index] = node;
         }
