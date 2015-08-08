@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.DataStr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.Windows", "Windows\ProgrammingProblems.Windows.csproj", "{C83AF0CD-074F-430B-BAD3-FDA7957B2C85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.DataStructuresTests", "ProgrammingProblems.DataStructuresTests\ProgrammingProblems.DataStructuresTests.csproj", "{48AD2D42-71BB-4F33-994E-AED0468A3365}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.DataStructuresTests", "DataStructuresTests\ProgrammingProblems.DataStructuresTests.csproj", "{48AD2D42-71BB-4F33-994E-AED0468A3365}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
