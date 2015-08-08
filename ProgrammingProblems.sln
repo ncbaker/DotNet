@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.DataStructures", "DataStructures\ProgrammingProblems.DataStructures.csproj", "{8A6B4DC4-EA23-40D7-A144-15F9C871A4A8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.Windows", "Windows\ProgrammingProblems.Windows.csproj", "{C83AF0CD-074F-430B-BAD3-FDA7957B2C85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.DataStructuresTests", "ProgrammingProblems.DataStructuresTests\ProgrammingProblems.DataStructuresTests.csproj", "{48AD2D42-71BB-4F33-994E-AED0468A3365}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C83AF0CD-074F-430B-BAD3-FDA7957B2C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C83AF0CD-074F-430B-BAD3-FDA7957B2C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C83AF0CD-074F-430B-BAD3-FDA7957B2C85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48AD2D42-71BB-4F33-994E-AED0468A3365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48AD2D42-71BB-4F33-994E-AED0468A3365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48AD2D42-71BB-4F33-994E-AED0468A3365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48AD2D42-71BB-4F33-994E-AED0468A3365}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -177,7 +177,8 @@ namespace ProgrammingProblems.DataStructures
             return ancenstorsPlus;
         }
 
-        public Dictionary<int, List<int>> SearchBranchSummaries(int total)
+        //keeping extra step to convert back to hash set temporarily.  tree allows better debugging.
+        public List<List<int>> SearchBranchSums(int total)
         {
             Dictionary<int, List<int>> v = new Dictionary<int, List<int>>();
 
@@ -187,7 +188,8 @@ namespace ProgrammingProblems.DataStructures
                 if (list[i].Sum() == total)
                     v.Add(i, list[i]);
 
-            return v;
+            return v.Values.ToList();
+            //return new HashSet<List<int>>(v.Values.AsEnumerable());
         }
 
         private void ResetNode(SummaryBinaryNode node)

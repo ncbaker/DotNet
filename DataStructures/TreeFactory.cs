@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ProgrammingProblems.DataStructures
 {
@@ -20,6 +21,15 @@ namespace ProgrammingProblems.DataStructures
             tree.Root.RightNode.RightNode.RightNode = new SummaryBinaryNode(2);
 
             return tree;
+        }
+        public static HashSet<List<int>> GetCareerCupTreeResult()
+        {
+            HashSet<List<int>> results = new HashSet<List<int>>();
+            results.Add(new List<int>() { 3, 4 });
+            results.Add(new List<int>() { 2, 5 });
+            results.Add(new List<int>() { 2, 5, -2, 2 });
+
+            return results;
         }
         public static SimpleBinaryNode GetCareerCupTreeSimple()
         {

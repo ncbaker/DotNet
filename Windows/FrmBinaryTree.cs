@@ -101,7 +101,7 @@ namespace ProgrammingProblems.Windows
                 int search = 0;
                 if (Int32.TryParse(txtSearchNumber.Text, out search))
                 {
-                    List<List<int>> searched = tree.SearchBranchSummaries(search).Values.ToList();
+                    List<List<int>> searched = tree.SearchBranchSums(search);
                     textBox2.Text = PrintList(searched).ToString();
                 }
                 else
@@ -175,5 +175,13 @@ namespace ProgrammingProblems.Windows
         }
         #endregion
 
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+        
     }
+
+
 }
