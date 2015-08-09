@@ -95,17 +95,13 @@ namespace ProgrammingProblems.Windows
                 SummaryBinaryTree tree = TreeFactory.GetCareerCupTree();
                 BuildTree(tree);
 
-                List<List<int>> exploded = tree.ExplodeTree();
-                textBox1.Text = PrintList(exploded).ToString();
+                textBox1.Text = PrintList(tree.ExplodeTree());
 
                 int search = 0;
-                if (Int32.TryParse(txtSearchNumber.Text, out search))
-                {
-                    List<List<int>> searched = tree.SearchBranchSums(search);
-                    textBox2.Text = PrintList(searched).ToString();
-                }
-                else
+                if (!Int32.TryParse(txtSearchNumber.Text, out search))
                     MessageBox.Show("Search input is invalid");
+                else
+                    textBox2.Text = PrintList(tree.SearchBranchSums(search));
             }
             catch (Exception ex)
             {
@@ -113,6 +109,8 @@ namespace ProgrammingProblems.Windows
             }
         }
 
+        
+        //build tree, binds tree datastructure to a windows form object
         public void BuildTree(BinaryTree<int> tree)
         {
             TreeNode root = BuildNode(tree.Root);
@@ -133,29 +131,31 @@ namespace ProgrammingProblems.Windows
             return n;
         }
 
-        private StringBuilder PrintList(List<List<int>> list)
+        //todo: create a new object instead of List<List<int>> and override ToString().  could also export HashSet<List<int>>.
+        private string PrintList(List<List<int>> list)
         {
             StringBuilder sb = new StringBuilder();
             int ix = 0;
-            foreach (var item in list)
+            foreach (var item in list.Where(i => i.Count > 0))
             {
-                if (item.Count == 0) continue;
-
                 sb.AppendFormat("Ix - {0}, Sum {1} - List ", ix++, item.Sum());
-                sb.Append("{");
-                foreach (var i in item)
-                    sb.Append(i + ",");
-
-                if (sb.Length > 1)
-                    sb.Remove(sb.Length - 1, 1);
-
-                sb.Append("}");
-                sb.AppendLine();
+                sb.Append("{").Append(String.Join(",", item)).AppendLine("}");
             }
-            sb.AppendLine();
-            sb.AppendFormat("Count - {0}", list.Count);
+            
+            sb.AppendLine().AppendFormat("Count - {0}", list.Count);
 
-            return sb;
+            return sb.ToString();
+        }
+
+        private string PrintListSimple(List<List<int>> list)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in list.Where(i => i.Count > 0))
+                sb.AppendLine(String.Join(",", item));
+            
+            sb.AppendLine().AppendFormat("Count - {0}", list.Count);
+
+            return sb.ToString();
         }
         #endregion
 

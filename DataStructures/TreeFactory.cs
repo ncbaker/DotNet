@@ -22,15 +22,7 @@ namespace ProgrammingProblems.DataStructures
 
             return tree;
         }
-        public static HashSet<List<int>> GetCareerCupTreeResult()
-        {
-            HashSet<List<int>> results = new HashSet<List<int>>();
-            results.Add(new List<int>() { 3, 4 });
-            results.Add(new List<int>() { 2, 5 });
-            results.Add(new List<int>() { 2, 5, -2, 2 });
-
-            return results;
-        }
+        
         public static SimpleBinaryNode GetCareerCupTreeSimple()
         {
             SimpleBinaryNode a = new SimpleBinaryNode(3, 4, 8);

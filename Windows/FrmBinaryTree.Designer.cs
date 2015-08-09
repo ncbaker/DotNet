@@ -28,6 +28,7 @@ namespace ProgrammingProblems.Windows
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBinaryTree));
             this.txtSearchNumber = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@ namespace ProgrammingProblems.Windows
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rbSimple = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,23 +163,24 @@ namespace ProgrammingProblems.Windows
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(80, 16);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(92, 17);
             this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "More Complex";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // rbSimple
             // 
             this.rbSimple.AutoSize = true;
-            this.rbSimple.Checked = true;
             this.rbSimple.Location = new System.Drawing.Point(18, 16);
             this.rbSimple.Name = "rbSimple";
             this.rbSimple.Size = new System.Drawing.Size(56, 17);
             this.rbSimple.TabIndex = 0;
-            this.rbSimple.TabStop = true;
             this.rbSimple.Text = "Simple";
+            this.toolTip1.SetToolTip(this.rbSimple, "Simple algorithm not complete.  Doesn\'t work.");
             this.rbSimple.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -234,5 +237,6 @@ namespace ProgrammingProblems.Windows
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton rbSimple;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
