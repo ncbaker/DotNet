@@ -4,6 +4,13 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
+/*
+ *   Redo this entire thing.  Look to solve CareerCup problem with DFS Pre-order traversal.
+ *   Then create a bunch of test cases & unit tests
+ *   After that redo front page to point to new algorithm then delete the pointers to old algorithms
+ *   Maybe just ditch the web app entirely, use the console for testing, and put up a web front end eventually on a blog
+ */
+
 namespace ProgrammingProblems.DataStructures
 {
     #region Node
@@ -228,5 +235,20 @@ namespace ProgrammingProblems.DataStructures
         }
         #endregion
     }
+    #endregion
+
+
+
+    #region
+    public class SimpleNode
+    {
+        public int Value { get; set; }
+        public SimpleNode Left { get; set; }
+        public SimpleNode Right { get; set; }
+
+        //public SimpleNode() { }
+    }
+
+
     #endregion
 }

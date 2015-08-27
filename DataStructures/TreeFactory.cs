@@ -33,6 +33,17 @@ namespace ProgrammingProblems.DataStructures
 
             return tree;
         }
+
+        public static SimpleBinaryNode GetCareerCupTreeSimple()
+        {
+            SimpleBinaryNode a = new SimpleBinaryNode(3, 4, 8);
+            SimpleBinaryNode b = new SimpleBinaryNode(5, 6, -2);
+            SimpleBinaryNode tree = new SimpleBinaryNode(2, a, b);
+
+            tree.RightNode.RightNode.RightNode = new SimpleBinaryNode(2);
+
+            return tree;
+        }
     }
 }
 
