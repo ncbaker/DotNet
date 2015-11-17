@@ -34,16 +34,34 @@ namespace ProgrammingProblems.DataStructures
             return tree;
         }
 
-        public static SimpleBinaryNode GetCareerCupTreeSimple()
+
+        public static SimpleNode GetCareerCupTreeSimple1()
         {
-            SimpleBinaryNode a = new SimpleBinaryNode(3, 4, 8);
-            SimpleBinaryNode b = new SimpleBinaryNode(5, 6, -2);
-            SimpleBinaryNode tree = new SimpleBinaryNode(2, a, b);
+            SimpleNode l4 = new SimpleNode() { Value = 4 };
+            SimpleNode l8 = new SimpleNode() { Value = 8 };
+            SimpleNode left = new SimpleNode() { Value = 3, Left = l4, Right = l8 };
 
-            tree.RightNode.RightNode.RightNode = new SimpleBinaryNode(2);
+            SimpleNode r6 = new SimpleNode() { Value = 6 }; ;
+            SimpleNode r2 = new SimpleNode() { Value = 2 }; ;
+            SimpleNode rn2 = new SimpleNode() { Value = -2, Right = r2 }; ;
+            SimpleNode right = new SimpleNode() { Value = 5, Left = r6, Right = rn2 };
 
-            return tree;
+            return new SimpleNode() { Value = 2, Left = left, Right = right };
         }
+
+        //public static SimpleNode<int> GetCareerCupTreeSimple2()
+        //{
+        //    SimpleNode<int> l4 = new SimpleNode<int>() { Value = 4 };
+        //    SimpleNode<int> l8 = new SimpleNode<int>() { Value = 8 };
+        //    SimpleNode<int> left = new SimpleNode<int>() { Value = 3, Left = l4, Right = l8 };
+
+        //    SimpleNode<int> r6 = new SimpleNode<int>() { Value = 6 }; ;
+        //    SimpleNode<int> r2 = new SimpleNode<int>() { Value = 2 }; ;
+        //    SimpleNode<int> rn2 = new SimpleNode<int>() { Value = -2, Right = r2 }; ;
+        //    SimpleNode<int> right = new SimpleNode<int>() { Value = 5, Left = r6, Right = rn2 };
+
+        //    return new SimpleNode<int>() { Value = 2, Left = left, Right = right };
+        //}
     }
 }
 

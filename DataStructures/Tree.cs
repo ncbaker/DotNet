@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
+
 /*
  *   Redo this entire thing.  Look to solve CareerCup problem with DFS Pre-order traversal.
  *   Then create a bunch of test cases & unit tests
@@ -240,15 +241,154 @@ namespace ProgrammingProblems.DataStructures
 
 
     #region
+    //public class SimpleNode<T>
+    //{
+    //    public T Value { get; set; }
+    //    public SimpleNode<T> Left { get; set; }
+    //    public SimpleNode<T> Right { get; set; }
+
+    //    public IEnumerator<T> GetEnumerator()
+    //    {
+    //        var leftEnumerable = (IEnumerable<T>)Left ?? new T[0];
+    //        var rightEnumerable = (IEnumerable<T>)Right ?? new T[0];
+                        
+    //        return leftEnumerable.Concat(new T[] { Value })
+    //                             .Concat(rightEnumerable)
+    //                             .GetEnumerator();
+    //    }
+    //    //public IEnumerator GetEnumerator()
+    //    //{
+    //    //    if (Left != null)
+    //    //    {
+    //    //        foreach (var v in Left)
+    //    //        {
+    //    //            yield return v;
+    //    //        }
+    //    //    }
+
+    //    //    yield return Value;
+
+    //    //    if (Right != null)
+    //    //    {
+    //    //        foreach (var v in Right)
+    //    //        {
+    //    //            yield return v;
+    //    //        }
+    //    //    }
+    //    //}
+    //    //public List<SimpleNode> Preorder(SimpleNode root, List<SimpleNode> nodes)
+    //    //{
+    //    //    nodes.Add(root);
+
+    //    //    if (root.Left != null)
+    //    //        Preorder(root.Left, nodes);
+    //    //    if (root.Right != null)
+    //    //        Preorder(root.Right, nodes);
+
+    //    //    return nodes;
+    //    //}
+    //    //public List<List<SimpleNode>> GetPathsWithSum(int search)
+    //    //{
+
+    //    //}
+    //}
+
     public class SimpleNode
     {
         public int Value { get; set; }
         public SimpleNode Left { get; set; }
         public SimpleNode Right { get; set; }
+    }
+    public static class SimpleNodeHelper
+    {
+        public static List<List<string>> findPathsWithSumN(SimpleNode node, int searchValue)
+        {
+            var result = new List<List<string>>();
 
-        //public SimpleNode() { }
+            Preorder(TreeFactory.GetCareerCupTreeSimple1(), searchValue, 0, result, new List<string>());
+
+            return result;
+        }
+        private static void Preorder(SimpleNode root, int searchValue, int currentSum, List<List<string>> foundPaths, List<string> currentPath)
+        {
+            if (root == null)
+                return;
+
+            currentPath.Add(root.Value.ToString());
+            currentSum += root.Value;
+
+            if (currentSum == searchValue)
+                foundPaths.Add(new List<string>(currentPath));
+
+            if (root.Left != null)
+                Preorder(root.Left, searchValue, currentSum, foundPaths, new List<string>(currentPath));
+            if (root.Right != null)
+                Preorder(root.Right, searchValue, currentSum, foundPaths, new List<string>(currentPath));
+
+            currentSum = 0;
+            currentPath.Clear();
+        }
     }
 
+
+        //PreOrder
+        //    nodes.Add(root);
+
+        //    if (root.Left != null)
+        //        Preorder(root.Left, nodes);
+        //    if (root.Right != null)
+        //        Preorder(root.Right, nodes);
+        //public IEnumerator GetEnumerator()
+        //{
+        //    yield return Value;
+
+        //    if (Left != null)
+        //        foreach (var v in Left)
+        //            yield return v;
+
+        //    if (Right != null)
+        //        foreach (var v in Right)
+        //            yield return v;
+
+        //    yield return null;
+        //}
+
+        //InOrder
+        //public IEnumerator GetInOrderEnumerator()
+        //{
+        //    if (Left != null)
+        //    {
+        //        foreach (var v in Left)
+        //        {
+        //            yield return v;
+        //        }
+        //    }
+
+        //    yield return Value;
+
+        //    if (Right != null)
+        //    {
+        //        foreach (var v in Right)
+        //        {
+        //            yield return v;
+        //        }
+        //    }
+        //}
+        //public List<SimpleNode> Preorder(SimpleNode root, List<SimpleNode> nodes)
+        //{
+        //    nodes.Add(root);
+
+        //    if (root.Left != null)
+        //        Preorder(root.Left, nodes);
+        //    if (root.Right != null)
+        //        Preorder(root.Right, nodes);
+
+        //    return nodes;
+        //}
+        //public List<List<SimpleNode>> GetPathsWithSum(int search)
+        //{
+
+        //}
 
     #endregion
 }
