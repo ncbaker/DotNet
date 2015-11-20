@@ -77,20 +77,20 @@ namespace ProgrammingProblems.Test
 
 
             foreach (var v in tests)
-                Assert.AreEqual<int>(UtopianTree.grow(v.Key), v.Value);
+                Assert.AreEqual<int>(StringsAlgorithms.grow(v.Key), v.Value);
         }
 
         [TestMethod]
         public void TestAlgorithmPangram()
         {
             string input = "We promptly judged antique ivory buckles for the next prize";
-            Assert.AreEqual<bool>(Pangram.isPangram(input), true);
+            Assert.AreEqual<bool>(SearchAlgorithms.isPangram(input), true);
 
             input = "We promptly judged antique ivory buckles for the prize";
-            Assert.AreEqual<bool>(Pangram.isPangram(input), false);
+            Assert.AreEqual<bool>(SearchAlgorithms.isPangram(input), false);
 
             input = "The quick brown fox jumps over the lazy dog";
-            Assert.AreEqual<bool>(Pangram.isPangram(input), true);
+            Assert.AreEqual<bool>(SearchAlgorithms.isPangram(input), true);
         }
     }
 }

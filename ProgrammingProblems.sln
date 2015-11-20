@@ -11,9 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.DataStr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.ConsoleApp", "ConsoleApp\ProgrammingProblems.ConsoleApp.csproj", "{3BCD5929-1CF0-46E6-8E8F-E76517E188D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.Algorithms", "ProgrammingProblems.Algorithms\ProgrammingProblems.Algorithms.csproj", "{7AE246F8-5587-4F68-AA4B-85967A81B045}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.Algorithms", "Algorithms\ProgrammingProblems.Algorithms.csproj", "{7AE246F8-5587-4F68-AA4B-85967A81B045}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.Test", "ProgrammingProblems.Test\ProgrammingProblems.Test.csproj", "{06A50338-E77B-4C94-861A-28ED23ADFF32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.Test", "Tests\ProgrammingProblems.Test.csproj", "{06A50338-E77B-4C94-861A-28ED23ADFF32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -40,10 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pangram.cs" />
-    <Compile Include="UtopianTree.cs" />
+    <Compile Include="Search.cs" />
+    <Compile Include="Implementation.cs" />
+    <Compile Include="Sorting.cs" />
+    <Compile Include="Strings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

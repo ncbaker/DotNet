@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProgrammingProblems.Algorithms\ProgrammingProblems.Algorithms.csproj">
+    <ProjectReference Include="..\Algorithms\ProgrammingProblems.Algorithms.csproj">
       <Project>{7ae246f8-5587-4f68-aa4b-85967a81b045}</Project>
       <Name>ProgrammingProblems.Algorithms</Name>
     </ProjectReference>
