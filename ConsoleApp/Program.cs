@@ -10,10 +10,18 @@ namespace ProgrammingProblems.ConsoleApp
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-            string input = Console.ReadLine();
-            Console.WriteLine(Pangram.isPangram(input) ? "pangram" : "not pangram");
+            DynamicProgramming.maxSubArray();
+
+            while (Console.ReadLine().ToLower() == "y")
+            {
+                DynamicProgramming.maxSubArray();
+                Console.WriteLine();
+                Console.WriteLine();
+            }
+            Console.ReadLine();
 
 
             //int count = Convert.ToInt32(Console.ReadLine());

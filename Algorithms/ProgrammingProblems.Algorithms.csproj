@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DynamicProgramming.cs" />
+    <Compile Include="Greedy.cs" />
     <Compile Include="Search.cs" />
     <Compile Include="Implementation.cs" />
     <Compile Include="Sorting.cs" />
