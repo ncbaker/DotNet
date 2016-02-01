@@ -92,5 +92,31 @@ namespace ProgrammingProblems.Test
             input = "The quick brown fox jumps over the lazy dog";
             Assert.AreEqual<bool>(SearchAlgorithms.isPangram(input), true);
         }
+
+        [TestMethod]
+        public void TestDynamicMaxSubarray()
+        {
+            List<int[]> tc = DynamicMaxSubarraySeed.GetTestCase3();
+            List<int[]> answers = new List<int[]>();
+            answers.Add(new int[] { 2617065, 172083036 });
+            answers.Add(new int[] { 1274115, 193037987 });
+            answers.Add(new int[] { 2202862, 163398048 });
+            answers.Add(new int[] { 2454939, 240462364 });
+            answers.Add(new int[] { 3239908, 186256172 });
+            answers.Add(new int[] { 2486039, 202399661 });
+            answers.Add(new int[] { 1092777, 137409985 });
+            answers.Add(new int[] { 962621, 135978139 });
+            answers.Add(new int[] { 3020911, 224370860 });
+            answers.Add(new int[] { 1755033, 158953999 });
+            
+            List<int[]> results = DynamicProgramming.processMax(tc.Count, tc);
+
+            //foreach (int[] r in results)
+            for (int i = 0; i < results.Count; i++)
+            {
+                Assert.AreEqual<int>(results[i][0], answers[i][0]);
+                Assert.AreEqual<int>(results[i][1], answers[i][1]);
+            }            
+        }
     }
 }
