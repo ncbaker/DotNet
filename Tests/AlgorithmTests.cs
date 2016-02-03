@@ -6,7 +6,7 @@ using ProgrammingProblems.Algorithms;
 namespace ProgrammingProblems.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class AlgorithmTests
     {
         [TestMethod]
         public void TestAlgorithmUtopianTree()
@@ -96,7 +96,25 @@ namespace ProgrammingProblems.Test
         [TestMethod]
         public void TestDynamicMaxSubarray()
         {
-            List<int[]> tc = DynamicMaxSubarraySeed.GetTestCase3();
+            string line;
+            List<int[]> data = new List<int[]>();
+
+            int[] array = new int[] { };
+
+            int arrSize = 0;
+            System.IO.StreamReader file = new System.IO.StreamReader("../../DynamicMaxSubarraySeedData.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                arrSize = Convert.ToInt32(line);
+                line = file.ReadLine();
+                array = Array.ConvertAll(line.Split(','), s => int.Parse(s));
+                if (array.Length != arrSize)
+                    throw new ArrayTypeMismatchException(String.Format("Array length error in seed data text file.  Array #{0}.", data.Count));
+
+                data.Add(array);
+            }
+            
+
             List<int[]> answers = new List<int[]>();
             answers.Add(new int[] { 2617065, 172083036 });
             answers.Add(new int[] { 1274115, 193037987 });
@@ -109,7 +127,7 @@ namespace ProgrammingProblems.Test
             answers.Add(new int[] { 3020911, 224370860 });
             answers.Add(new int[] { 1755033, 158953999 });
             
-            List<int[]> results = DynamicProgramming.processMax(tc.Count, tc);
+            List<int[]> results = DynamicProgramming.processMax(data.Count, data);
 
             //foreach (int[] r in results)
             for (int i = 0; i < results.Count; i++)

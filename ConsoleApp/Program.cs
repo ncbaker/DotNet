@@ -13,38 +13,7 @@ namespace ProgrammingProblems.ConsoleApp
 
         static void Main(string[] args)
         {
-            //List<int[]> tc = DynamicMaxSubarraySeed.GetTestCase3();
-            //List<int[]> answers = new List<int[]>();
-            //answers.Add(new int[] { 2617065, 172083036 });
-            //answers.Add(new int[] { 1274115, 193037987 });
-            //answers.Add(new int[] { 2202862, 163398048 });
-            //answers.Add(new int[] { 2454939, 240462364 });
-            //answers.Add(new int[] { 3239908, 186256172 });
-            //answers.Add(new int[] { 2486039, 202399661 });
-            //answers.Add(new int[] { 1092777, 137409985 });
-            //answers.Add(new int[] { 962621, 135978139 });
-            //answers.Add(new int[] { 3020911, 224370860 });
-            //answers.Add(new int[] { 1755033, 158953999 });
-
-            ////foreach (var arr in tc)
-            //for (int i = 0; i < tc.Count; i++)
-            //{
-            //    List<int> param = new List<int>();
-            //    param.AddRange(tc[i]);
-            //    List<int[]> p = new List<int[]> { param.ToArray() };
-            //    int[] output = DynamicProgramming.processMax(1, p);
-
-            //    if (output[0] != answers[i][0] || output[1] != answers[i][1])
-            //    {
-
-            //    }
-            //    else
-            //    {
-
-            //    }
-            //}
-
-
+            
             DynamicProgramming.maxSubArray();
 
             while (Console.ReadLine().ToLower() == "y")
@@ -101,7 +70,6 @@ namespace ProgrammingProblems.ConsoleApp
 
         static void Amazon()
         {
-            test();
             return;
 
             Dictionary<int, int> someDictionary = new Dictionary<int, int>();
@@ -122,17 +90,6 @@ namespace ProgrammingProblems.ConsoleApp
             List<string> recomendations = new List<string>();
             foreach (var i in myList)
                 recomendations.Add(i.Key);
-        }
-
-        static void test()
-        {
-            int num = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < num; i++)
-            {
-                
-            }
-            int[] j = new int[] { 1, 2, 3, 4, 10, 11 };
-            int t = j.Sum();
         }
     }
 }

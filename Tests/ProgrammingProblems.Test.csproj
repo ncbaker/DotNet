@@ -50,7 +50,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="SummaryBinaryTreeTests.cs" />
+    <Compile Include="AlgorithmTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +59,13 @@
       <Project>{7ae246f8-5587-4f68-aa4b-85967a81b045}</Project>
       <Name>ProgrammingProblems.Algorithms</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataStructures\ProgrammingProblems.DataStructures.csproj">
+      <Project>{8a6b4dc4-ea23-40d7-a144-15f9c871a4a8}</Project>
+      <Name>ProgrammingProblems.DataStructures</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DynamicMaxSubarraySeedData.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

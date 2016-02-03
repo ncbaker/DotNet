@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.DataStr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.Windows", "Windows\ProgrammingProblems.Windows.csproj", "{C83AF0CD-074F-430B-BAD3-FDA7957B2C85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.DataStructuresTests", "DataStructuresTests\ProgrammingProblems.DataStructuresTests.csproj", "{48AD2D42-71BB-4F33-994E-AED0468A3365}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.ConsoleApp", "ConsoleApp\ProgrammingProblems.ConsoleApp.csproj", "{3BCD5929-1CF0-46E6-8E8F-E76517E188D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgrammingProblems.Algorithms", "Algorithms\ProgrammingProblems.Algorithms.csproj", "{7AE246F8-5587-4F68-AA4B-85967A81B045}"
@@ -29,10 +27,6 @@ Global
 		{C83AF0CD-074F-430B-BAD3-FDA7957B2C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C83AF0CD-074F-430B-BAD3-FDA7957B2C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C83AF0CD-074F-430B-BAD3-FDA7957B2C85}.Release|Any CPU.Build.0 = Release|Any CPU
-		{48AD2D42-71BB-4F33-994E-AED0468A3365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{48AD2D42-71BB-4F33-994E-AED0468A3365}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{48AD2D42-71BB-4F33-994E-AED0468A3365}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{48AD2D42-71BB-4F33-994E-AED0468A3365}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3BCD5929-1CF0-46E6-8E8F-E76517E188D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3BCD5929-1CF0-46E6-8E8F-E76517E188D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BCD5929-1CF0-46E6-8E8F-E76517E188D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
