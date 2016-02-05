@@ -9,6 +9,11 @@ namespace ProgrammingProblems.Algorithms
     public static class SearchAlgorithms
     {
         /* https://www.hackerrank.com/challenges/pangrams */
+        /// <summary>
+        /// Determines if the string is a pangram
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns>bool if string is a pangram </returns>
         public static bool isPangram(string s)
         {
             List<char> alphabet = "abcdefghijklmnopqrstuvwxyz".ToList();

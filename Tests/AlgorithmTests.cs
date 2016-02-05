@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using ProgrammingProblems.Algorithms;
+using System.Text;
 
 namespace ProgrammingProblems.Test
 {
@@ -115,26 +116,78 @@ namespace ProgrammingProblems.Test
             }
             
 
-            List<int[]> answers = new List<int[]>();
-            answers.Add(new int[] { 2617065, 172083036 });
-            answers.Add(new int[] { 1274115, 193037987 });
-            answers.Add(new int[] { 2202862, 163398048 });
-            answers.Add(new int[] { 2454939, 240462364 });
-            answers.Add(new int[] { 3239908, 186256172 });
-            answers.Add(new int[] { 2486039, 202399661 });
-            answers.Add(new int[] { 1092777, 137409985 });
-            answers.Add(new int[] { 962621, 135978139 });
-            answers.Add(new int[] { 3020911, 224370860 });
-            answers.Add(new int[] { 1755033, 158953999 });
+            List<Tuple<int, int>> answers = new List<Tuple<int, int>>();
+            answers.Add(new Tuple<int, int>( 2617065, 172083036));
+            answers.Add(new Tuple<int, int>( 1274115, 193037987 ));
+            answers.Add(new Tuple<int, int>( 2202862, 163398048 ));
+            answers.Add(new Tuple<int, int>( 2454939, 240462364 ));
+            answers.Add(new Tuple<int, int>( 3239908, 186256172 ));
+            answers.Add(new Tuple<int, int>( 2486039, 202399661 ));
+            answers.Add(new Tuple<int, int>( 1092777, 137409985 ));
+            answers.Add(new Tuple<int, int>( 962621, 135978139 ));
+            answers.Add(new Tuple<int, int>( 3020911, 224370860 ));
+            answers.Add(new Tuple<int, int>( 1755033, 158953999 ));
             
-            List<int[]> results = DynamicProgramming.processMax(data.Count, data);
+            List<Tuple<int, int>> results = DynamicProgramming.processMax(data.Count, data);
 
             //foreach (int[] r in results)
             for (int i = 0; i < results.Count; i++)
             {
-                Assert.AreEqual<int>(results[i][0], answers[i][0]);
-                Assert.AreEqual<int>(results[i][1], answers[i][1]);
-            }            
+                Assert.AreEqual<int>(results[i].Item1, answers[i].Item1);
+                Assert.AreEqual<int>(results[i].Item2, answers[i].Item2);
+            }
+        }
+
+        [TestMethod]
+        public void TestBFSSHortReach()
+        {
+            List<int> startNodes = new List<int>();
+
+            System.IO.StreamReader file = new System.IO.StreamReader(@"../../bfsshortreach1.txt");
+
+            string line = file.ReadLine();
+
+            int[] arr = new int[2];
+            arr = Array.ConvertAll(line.Split(' '), s => int.Parse(s));
+            int nodes = arr[0];
+            int edges = arr[1];
+
+
+            //load data            
+            List<LinkedList<int>> graph = new List<LinkedList<int>>();
+            for (int j = 0; j < nodes; j++)
+                graph.Add(new LinkedList<int>());
+
+            for (int j = 0; j < edges; j++)
+            {
+                line = file.ReadLine();
+                arr = new int[2];
+                arr = Array.ConvertAll(line.Split(' '), s => int.Parse(s) - 1);
+
+                graph[arr[0]].AddLast(arr[1]);
+                graph[arr[1]].AddLast(arr[0]);
+            }
+
+
+            //load expected results
+            List<string> expectedResults = new List<string>();
+            for (int j = 0; j < nodes; j++)
+                expectedResults.Add(file.ReadLine());
+
+            //process & format data
+            List<int> result = new List<int>();
+            for (int i = 0; i < nodes; i++)
+            {
+                startNodes.Add(i);
+                result = GraphTheory.processBfsGraph(graph, i);
+
+                StringBuilder output = new StringBuilder();
+                for (int j = 0; j < result.Count; j++)
+                    if (startNodes[i] != j)
+                        output.Append(result[j] + " ");
+
+                Assert.AreEqual<string>(output.ToString().Trim(), expectedResults[i]);
+            }
         }
     }
 }

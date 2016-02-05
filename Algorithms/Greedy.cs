@@ -8,7 +8,10 @@ namespace ProgrammingProblems.Algorithms
 {
     public static class GreedyAlgorithms
     {
-        /* https://www.hackerrank.com/challenges/flowers */
+        /* https://www.hackerrank.com/challenges/greedy-florist */
+        /// <summary>
+        /// Method which implements a greedy algorithm for optimizing pricing for flowers.  HackerRank submission which creates graph from input
+        /// </summary>
         public static void flowersMain()
         {
             int N, K;
@@ -36,6 +39,14 @@ namespace ProgrammingProblems.Algorithms
             Console.WriteLine(result);
         }
 
+
+        /// <summary>
+        /// Method which implements a greedy algorithm for optimizing pricing of flowers based on a number of flowers to purchase, number of customers, and array of pricing.  
+        /// </summary>
+        /// <param name="N">Number of flowers</param>
+        /// <param name="K">Number of customers</param>
+        /// <param name="C">Array of flower pricing</param>
+        /// <returns>Minimum cost of buying N flowers</returns>/// 
         static int flowers(int N, int K, int[] C)
         {
             int[] ordered = C.OrderByDescending(i => i).ToArray();
@@ -50,8 +61,13 @@ namespace ProgrammingProblems.Algorithms
 
             return ttl;
         }
-        
+
+
+
         /* https://www.hackerrank.com/challenges/two-arrays */
+        /// <summary>
+        /// Method which implements a method for checking if two input arrays can be be re-arranged such that the items can be summed across arrays to equal a target number.  HackerRank submission which gets input from console and outputs bool.
+        /// </summary>
         public static void twoArrays()
         {
             //load data

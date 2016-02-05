@@ -9,12 +9,15 @@ namespace ProgrammingProblems.Algorithms
     public static class DynamicProgramming
     {
         /* https://www.hackerrank.com/challenges/maxsubarray */
+        /// <summary>
+        /// Outputs both the largest continuous and largest discontinous sub arry in an array.  HackerRank submission which creates array from input
+        /// </summary>
         public static void maxSubArray()
         {
             //load data
             int tests = Int32.Parse(Console.ReadLine());
             List<int[]> arrays = new List<int[]>();
-            
+
             for (int i = 0; i < tests; i++)
             {
                 int[] arr = new int[Int32.Parse(Console.ReadLine())];
@@ -22,17 +25,20 @@ namespace ProgrammingProblems.Algorithms
                 arrays.Add(arr);
             }
 
-            List<int[]> results = processMax(tests, arrays);
+            List<Tuple<int, int>> results = processMax(tests, arrays);
 
-            foreach(int[] r in results)
-                Console.WriteLine(String.Format("{0} {1}", r[0], r[1]));
+            foreach (Tuple<int, int> r in results)
+                Console.WriteLine(String.Format("{0} {1}", r.Item1, r.Item2));
         }
 
-        public static List<int[]> processMax(int tests, List<int[]> arrays)
+        /// <summary>
+        /// Process a series of arrays and returns a list of outputs with the largest continuous and largest discontinous sub arry in an array.
+        /// </summary>
+        public static List<Tuple<int, int>> processMax(int tests, List<int[]> arrays)
         {
             //process data
             int nonConTtl, max1, max2;
-            List<int[]> results = new List<int[]>();
+            List<Tuple<int, int>> results = new List<Tuple<int, int>>();
             for (int i = 0; i < tests; i++)
             {
                 //get max non-contiguous sum
@@ -49,106 +55,10 @@ namespace ProgrammingProblems.Algorithms
                 else //edge: all items in array are negative
                     nonConTtl = max2 = arrays[i].Max();
 
-                results.Add(new int[] { max2, nonConTtl });
+                results.Add(new Tuple<int, int>(max2, nonConTtl));
             }
 
             return results;
         }
-
-        //public static int[] processMaxOld(int tests, List<int[]> arrays)
-        //{
-        //    //process data
-        //    int ttl, nonConTtl;
-        //    int[] positiveArr;
-        //    int[] output = new int[2];
-        //    for (int i = 0; i < tests; i++)
-        //    {
-        //        //get max non-contiguous sum
-        //        positiveArr = arrays[i].Where(x => x >= 0).ToArray();
-        //        if (positiveArr.Length > 0)
-        //        {
-        //            nonConTtl = positiveArr.Sum();
-
-        //            ttl = 0;
-        //            for (int j = 0; j < arrays[i].Length; j++)
-        //                ttl = Math.Max(ttl, findMax(arrays[i].Take(arrays[i].Length - j).ToArray()));
-        //        }
-        //        else //edge: all items in array are negative
-        //            nonConTtl = ttl = arrays[i].Max();
-
-        //        output[0] = ttl;
-        //        output[1] = nonConTtl;
-        //    }
-
-        //    return output;
-        //}
-
-
-        //public static int[] processMax11(int tests, List<int[]> arrays)
-        //{
-        //    //process data
-        //    int ttl, nonConTtl, sum;
-        //    int[] positiveArr;
-        //    int[] output = new int[2];
-        //    for (int i = 0; i < tests; i++)
-        //    {
-        //        //get max non-contiguous sum
-        //        positiveArr = arrays[i].Where(x => x >= 0).ToArray();
-        //        if (positiveArr.Length > 0)
-        //        {
-        //            nonConTtl = positiveArr.Sum();
-
-        //            ttl = sum = 0;
-        //            for (int j = 0; j < arrays[i].Length; j++)
-        //            {
-        //                sum += arrays[i][j];
-        //                if (sum >= ttl)
-        //                    ttl = sum;
-        //                else
-        //                    sum = 0;
-        //            }
-        //        }
-        //        else //edge: all items in array are negative
-        //            nonConTtl = ttl = arrays[i].Max();
-
-        //        output[0] = ttl;
-        //        output[1] = nonConTtl;
-        //    }
-
-        //    return output;
-        //}
-
-        //static void processMax2(int tests, List<int[]> arrays)
-        //{
-        //    //process data
-        //    int ttl, nonConTtl;
-        //    int[] positiveArr;
-        //    for (int i = 0; i < tests; i++)
-        //    {
-        //        //get max non-contiguous sum
-        //        positiveArr = arrays[i].Where(x => x >= 0).ToArray();
-        //        if (positiveArr.Length > 0)
-        //        {
-        //            nonConTtl = positiveArr.Sum();
-
-        //            ttl = 0;
-        //            for (int j = 0; j < arrays[i].Length; j++)
-        //                ttl = Math.Max(ttl, findMax(arrays[i].Take(arrays[i].Length - j).ToArray()));
-        //        }
-        //        else //edge: all items in array are negative
-        //            nonConTtl = ttl = arrays[i].Max();
-
-        //        Console.WriteLine(String.Format("{0} {1}", ttl, nonConTtl));
-        //    }
-        //}
-
-        //static int findMax(int[] arr)
-        //{
-        //    int ttl = arr.Sum();
-        //    if (arr.Length == 1)
-        //        return ttl;
-        //    int sub = findMax(arr.Skip(1).ToArray());
-        //    return Math.Max(ttl, sub);
-        //}
     }
 }

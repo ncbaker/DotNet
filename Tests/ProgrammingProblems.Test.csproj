@@ -65,6 +65,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bfsshortreach1.txt" />
     <Content Include="DynamicMaxSubarraySeedData.txt" />
   </ItemGroup>
   <Choose>

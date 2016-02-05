@@ -13,15 +13,24 @@ namespace ProgrammingProblems.ConsoleApp
 
         static void Main(string[] args)
         {
-            
-            DynamicProgramming.maxSubArray();
+            GraphTheory.TestBFSSHortReach();
 
+            GraphTheory.bfsShortReach();
             while (Console.ReadLine().ToLower() == "y")
             {
-                DynamicProgramming.maxSubArray();
+                GraphTheory.bfsShortReach();
                 Console.WriteLine();
                 Console.WriteLine();
             }
+
+            //DynamicProgramming.maxSubArray();
+
+            //while (Console.ReadLine().ToLower() == "y")
+            //{
+            //    DynamicProgramming.maxSubArray();
+            //    Console.WriteLine();
+            //    Console.WriteLine();
+            //}
             Console.ReadLine();
 
 
