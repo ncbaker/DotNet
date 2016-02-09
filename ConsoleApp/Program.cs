@@ -13,15 +13,17 @@ namespace ProgrammingProblems.ConsoleApp
 
         static void Main(string[] args)
         {
-            GraphTheory.TestBFSSHortReach();
+            SearchAlgorithms.icecreamParlorMain();
 
-            GraphTheory.bfsShortReach();
-            while (Console.ReadLine().ToLower() == "y")
-            {
-                GraphTheory.bfsShortReach();
-                Console.WriteLine();
-                Console.WriteLine();
-            }
+            //int a = BitManipulation.lonelyinteger(new int[] { 0, 2, 0, 1, 2 });
+
+            //GraphTheory.bfsShortReach();
+            //while (Console.ReadLine().ToLower() == "y")
+            //{
+            //    GraphTheory.bfsShortReach();
+            //    Console.WriteLine();
+            //    Console.WriteLine();
+            //}
 
             //DynamicProgramming.maxSubArray();
 

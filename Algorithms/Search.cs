@@ -17,7 +17,7 @@ namespace ProgrammingProblems.Algorithms
         public static bool isPangram(string s)
         {
             List<char> alphabet = "abcdefghijklmnopqrstuvwxyz".ToList();
-            foreach(char c in s.ToLower().ToCharArray())
+            foreach (char c in s.ToLower().ToCharArray())
             {
                 if (alphabet.Contains(c))
                     alphabet.Remove(c);
@@ -94,6 +94,56 @@ namespace ProgrammingProblems.Algorithms
                 }
             }
             return count;
+        }
+
+        /* https://www.hackerrank.com/challenges/icecream-parlor */
+        /// <summary>
+        /// Determines if the string is a pangram
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns>Outputs</returns>
+        public static void icecreamParlorMain()
+        {
+            int tests = Int32.Parse(Console.ReadLine());
+
+            int[] M = new int[tests];
+            int[] N = new int[tests];
+            int[][] arrays = new int[tests][];
+            for (int i = 0; i < tests; i++)
+            {
+                M[i] = Convert.ToInt16(Console.ReadLine());
+                N[i] = Convert.ToInt16(Console.ReadLine());
+                arrays[i] = Array.ConvertAll(Console.ReadLine().Split(' '), s => int.Parse(s));
+            }
+
+            Tuple<int, int> res;
+            for (int i = 0; i < arrays.Length; i++)
+            {
+                res = icecreamParlor(M[i], N[i], arrays[i]);
+                Console.WriteLine(String.Format("{0} {1}", res.Item1, res.Item2));
+            }
+        }
+
+        /// <summary>
+        /// Determines if the string is a pangram
+        /// </summary>
+        /// <param name="M">total dollars</param>
+        /// <param name="N">number of flavors</param>
+        /// <param name="c">array of prices</param>
+        /// <returns>Tuple<int, int></returns>
+        public static Tuple<int, int> icecreamParlor(int M, int N, int[] c)
+        {
+            for (int i = 0; i < c.Length; i++)
+                for (int j = 0; j < c.Length; j++)
+                {
+                    if (i == j)
+                        continue;
+
+                    if (c[i] + c[j] == M)
+                        return new Tuple<int, int>(Math.Min(i, j)+1, Math.Max(i, j) + 1);
+                }
+
+            return new Tuple<int, int>(0, 0);
         }
     }
 }

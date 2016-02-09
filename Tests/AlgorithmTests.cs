@@ -9,6 +9,7 @@ namespace ProgrammingProblems.Test
     [TestClass]
     public class AlgorithmTests
     {
+        #region Strings Algorithms
         [TestMethod]
         public void TestAlgorithmUtopianTree()
         {
@@ -80,7 +81,10 @@ namespace ProgrammingProblems.Test
             foreach (var v in tests)
                 Assert.AreEqual<int>(StringsAlgorithms.grow(v.Key), v.Value);
         }
+        #endregion
 
+
+        #region Search Algorithms
         [TestMethod]
         public void TestAlgorithmPangram()
         {
@@ -94,6 +98,19 @@ namespace ProgrammingProblems.Test
             Assert.AreEqual<bool>(SearchAlgorithms.isPangram(input), true);
         }
 
+        [TestMethod]
+        public void TestIceCreamParlor()
+        {
+            Tuple<int,int> a = SearchAlgorithms.icecreamParlor(4, 5, new int[] { 1, 4, 5, 3, 2 });
+            Assert.AreEqual<Tuple<int, int>> (a, new Tuple<int, int>(1, 4));
+
+            Tuple<int, int> b = SearchAlgorithms.icecreamParlor(4, 4, new int[] { 2, 2, 4, 3 });
+            Assert.AreEqual<Tuple<int, int>>(b, new Tuple<int, int>(1, 2));
+        }
+        #endregion
+
+
+        #region DynamicProgramming
         [TestMethod]
         public void TestDynamicMaxSubarray()
         {
@@ -137,7 +154,10 @@ namespace ProgrammingProblems.Test
                 Assert.AreEqual<int>(results[i].Item2, answers[i].Item2);
             }
         }
+        #endregion
 
+
+        #region GraphTheory
         [TestMethod]
         public void TestBFSSHortReach()
         {
@@ -189,5 +209,22 @@ namespace ProgrammingProblems.Test
                 Assert.AreEqual<string>(output.ToString().Trim(), expectedResults[i]);
             }
         }
+        #endregion
+
+
+        #region BitManipulation
+        [TestMethod]
+        public void TestLonelyInteger()
+        {
+            int a = BitManipulation.lonelyinteger(new int[] { 1 });
+            Assert.AreEqual<int>(a, 1);
+
+            int b = BitManipulation.lonelyinteger(new int[] { 1, 1, 2 });
+            Assert.AreEqual<int>(b, 2);
+
+            int c = BitManipulation.lonelyinteger(new int[] { 0, 0, 1, 2, 1 });
+            Assert.AreEqual<int>(c, 2);
+        }
+        #endregion
     }
 }

@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="GraphTheory.cs" />
     <Compile Include="DynamicProgramming.cs" />
+    <Compile Include="BitManipulation.cs" />
     <Compile Include="Greedy.cs" />
     <Compile Include="Search.cs" />
     <Compile Include="Implementation.cs" />
