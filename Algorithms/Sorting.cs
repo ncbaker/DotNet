@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProgrammingProblems.Algorithms
 {
-    public static class StringAlgorithms
+    public static class SortingAlgorithms
     {
         /* https://www.hackerrank.com/challenges/insertionsort2 */
+        /// <summary>
+        /// Build a sorted array by repeatedly running InsertionSort algorithm over an array, which is built item by item appended to the end of the array.
+        /// </summary>
         public static void insertionSort2()
         {
             int num = Int32.Parse(Console.ReadLine());
@@ -20,13 +23,18 @@ namespace ProgrammingProblems.Algorithms
             {
                 temp = new int[i];
                 Array.Copy(arr, temp, i);
-                temp = insertionSort2(temp);
+                temp = insertionSort1(temp);
                 Array.Copy(temp, 0, arr, 0, i);
                 printArray(arr);
             }
         }
 
-        public static int[] insertionSort2(int[] arr)
+        /* https://www.hackerrank.com/challenges/insertionsort1 */
+        /// <summary>
+        /// Sorted unsorted number e in the rightmost cell of a sorted List
+        /// </summary>
+        /// <returns>Sorted int[]</returns>
+        public static int[] insertionSort1(int[] arr)
         {
             if (arr.Length == 1)
                 return arr;
@@ -56,6 +64,9 @@ namespace ProgrammingProblems.Algorithms
             return arr;
         }
 
+        /// <summary>
+        /// Helper method to print array to console
+        /// </summary>
         static void printArray(int[] arr)
         {
             string s = string.Empty;
@@ -65,6 +76,9 @@ namespace ProgrammingProblems.Algorithms
         }
 
         /* https://www.hackerrank.com/challenges/tutorial-intro */
+        /// <summary>
+        /// Given a sorted array (arar) and a number (VV) print the index location of VV in the array
+        /// </summary>
         public static void tutorialsIntro()
         {
             int find = Int32.Parse(Console.ReadLine());
@@ -79,55 +93,6 @@ namespace ProgrammingProblems.Algorithms
                     break;
                 }
             }
-        }
-
-        /* incomplete binary search alg. */
-        static void tutorialsIntroBad()
-        {
-            int find = Int32.Parse(Console.ReadLine());
-            int num = Int32.Parse(Console.ReadLine());
-            int[] arr = new int[num];
-            arr = Array.ConvertAll(Console.ReadLine().Split(' '), s => int.Parse(s));
-
-            int[] temp = arr;
-            int[] temp2;
-            int count = 0;
-
-            while (true)
-            {
-                //binary search - right half
-                int half = (int)Math.Floor((decimal)temp.Length / 2M);
-
-                temp2 = new int[half];
-                if (find > temp[half - 1])
-                {
-                    Array.Copy(temp, temp.Length - half - 1, temp2, 0, half);
-                    count += half - 1;
-                }
-
-                //binary search - left half
-                else if (find < temp[half - 1])
-                {
-                    Array.Copy(temp, temp2, half);
-                }
-
-                else
-                {
-                    Console.WriteLine(count + half);
-                    break;
-                }
-
-                temp = temp2;
-            }
-
-            //for (int i = 2; i <= arr.Length; i++)
-            //{
-            //    temp = new int[i];
-            //    Array.Copy(arr, temp, i);
-            //    temp = insertionSort2(temp);
-            //    Array.Copy(temp, 0, arr, 0, i);
-            //    printArray(arr);
-            //}
         }
     }
 }

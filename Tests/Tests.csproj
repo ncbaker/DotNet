@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProgrammingProblems.Test</RootNamespace>
     <AssemblyName>ProgrammingProblems.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -16,6 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,13 +56,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Algorithms\ProgrammingProblems.Algorithms.csproj">
+    <ProjectReference Include="..\Algorithms\Algorithms.csproj">
       <Project>{7ae246f8-5587-4f68-aa4b-85967a81b045}</Project>
-      <Name>ProgrammingProblems.Algorithms</Name>
+      <Name>Algorithms</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataStructures\ProgrammingProblems.DataStructures.csproj">
+    <ProjectReference Include="..\DataStructures\DataStructures.csproj">
       <Project>{8a6b4dc4-ea23-40d7-a144-15f9c871a4a8}</Project>
-      <Name>ProgrammingProblems.DataStructures</Name>
+      <Name>DataStructures</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

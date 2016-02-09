@@ -29,6 +29,9 @@ namespace ProgrammingProblems.Algorithms
         }
 
         /* https://www.hackerrank.com/challenges/pairs */
+        /// <summary>
+        /// Given N integers, count the number of pairs of integers whose difference is K.
+        /// </summary>
         public static void pairsMain()
         {
             int res;
@@ -50,6 +53,12 @@ namespace ProgrammingProblems.Algorithms
             res = pairs(_a, _k);
             Console.WriteLine(res);
         }
+        /// <summary>
+        /// Given N integers, count the number of pairs of integers whose difference is K.
+        /// </summary>
+        /// <param name="a">array of numbers</param>
+        /// <param name="k">difference</param>
+        /// <returns>Number of elements in a with difference of K</returns>
         static int pairs(int[] a, int k)
         {
             //edge: empty
@@ -98,10 +107,8 @@ namespace ProgrammingProblems.Algorithms
 
         /* https://www.hackerrank.com/challenges/icecream-parlor */
         /// <summary>
-        /// Determines if the string is a pangram
+        /// Determines which combination of ice cream flavors (elements in array) equals M dollars.  Gets inputs from console and outputs results.
         /// </summary>
-        /// <param name="s"></param>
-        /// <returns>Outputs</returns>
         public static void icecreamParlorMain()
         {
             int tests = Int32.Parse(Console.ReadLine());
@@ -125,7 +132,7 @@ namespace ProgrammingProblems.Algorithms
         }
 
         /// <summary>
-        /// Determines if the string is a pangram
+        /// Determines which combination of ice cream flavors (elements in array) equals M dollars.
         /// </summary>
         /// <param name="M">total dollars</param>
         /// <param name="N">number of flavors</param>

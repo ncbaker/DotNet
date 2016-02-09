@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ProgrammingProblems.Algorithms.BitManipulation">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BitManipulation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgrammingProblems.Algorithms.DynamicProgramming">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCAAAAAAAAAA=</HashCode>
+      <FileName>DynamicProgramming.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgrammingProblems.Algorithms.GraphTheory">
+    <Position X="0.5" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAEABAAAAAA=</HashCode>
+      <FileName>GraphTheory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgrammingProblems.Algorithms.GreedyAlgorithms">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Greedy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgrammingProblems.Algorithms.ImplementationAlgorithms">
+    <Position X="4.75" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Implementation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgrammingProblems.Algorithms.SearchAlgorithms">
+    <Position X="0.5" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAgAABBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Search.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgrammingProblems.Algorithms.SortingAlgorithms">
+    <Position X="2.5" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAgAABAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sorting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgrammingProblems.Algorithms.StringAlgorithms">
+    <Position X="4.75" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAEAEAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Strings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

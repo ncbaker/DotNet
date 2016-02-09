@@ -79,7 +79,7 @@ namespace ProgrammingProblems.Test
 
 
             foreach (var v in tests)
-                Assert.AreEqual<int>(StringsAlgorithms.grow(v.Key), v.Value);
+                Assert.AreEqual<int>(StringAlgorithms.grow(v.Key), v.Value);
         }
         #endregion
 

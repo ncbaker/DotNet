@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace ProgrammingProblems.Algorithms
 {
-    public static class StringsAlgorithms
+    public static class StringAlgorithms
     {
         /* https://www.hackerrank.com/challenges/pangrams */
+        /// <summary>
+        /// Determines whether a sentence uses every letter of the alphabet at least once.
+        /// </summary>
+        /// <param name="s">string to check</param>
+        /// <returns>bool</returns>
         public static bool isPangram(string s)
         {
             List<char> alphabet = "abcdefghijklmnopqrstuvwxyz".ToList();
-            foreach(char c in s.ToLower().ToCharArray())
+            foreach (char c in s.ToLower().ToCharArray())
             {
                 if (alphabet.Contains(c))
                     alphabet.Remove(c);
@@ -24,6 +29,11 @@ namespace ProgrammingProblems.Algorithms
         }
 
         /* https://www.hackerrank.com/challenges/utopian-tree */
+        /// <summary>
+        /// Determines final height of tree after N growth cycles, where there are two growth cycles per year and at each cycle it doubles and each summer it grows an extra 1 meter.
+        /// </summary>
+        /// <param name="numberOfCycles">Number of growth cycles</param>
+        /// <returns>The total height after the number of growth cycles</returns>
         public static int grow(int numberOfCycles)
         {
             int result = 1;
@@ -38,6 +48,9 @@ namespace ProgrammingProblems.Algorithms
         }
 
         /* https://www.hackerrank.com/challenges/funny-string */
+        /// <summary>
+        /// Determines if each element in two strings is the same distance in ASCII.  Outputs "Funny" or "Not Funny"
+        /// </summary>
         static void isFunny()
         {
             int num = Int32.Parse(Console.ReadLine());
@@ -66,6 +79,9 @@ namespace ProgrammingProblems.Algorithms
         }
 
         /* https://www.hackerrank.com/challenges/alternating-characters */
+        /// <summary>
+        /// Create an alternating string by deleting characters.  Outputs minimum deletions necessary.
+        /// </summary>
         static void alternatingCharacters()
         {
             int num = Int32.Parse(Console.ReadLine());

@@ -9,6 +9,9 @@ namespace ProgrammingProblems.Algorithms
     public static class ImplementationAlgorithms
     {
         /* https://www.hackerrank.com/challenges/find-digits */
+        /// <summary>
+        /// Traverse array and output number of elements that are evenly divisible by a number N.
+        /// </summary>
         static void findDigits()
         {
             int num = Int32.Parse(Console.ReadLine());
@@ -31,6 +34,9 @@ namespace ProgrammingProblems.Algorithms
         }
 
         /* https://www.hackerrank.com/challenges/taum-and-bday */
+        /// <summary>
+        /// Greedy algorithm to determine optimal purchasing of two different items based on input prices and a conversion price.
+        /// </summary>
         static void taumBday()
         {
             int num = Int32.Parse(Console.ReadLine());
