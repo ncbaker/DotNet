@@ -51,11 +51,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AITests.cs" />
     <Compile Include="SummaryBinaryTreeTests.cs" />
     <Compile Include="AlgorithmTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AI\AI.csproj">
+      <Project>{4d9936be-d3ec-4713-b66f-682887dedbd1}</Project>
+      <Name>AI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Algorithms\Algorithms.csproj">
       <Project>{7ae246f8-5587-4f68-aa4b-85967a81b045}</Project>
       <Name>Algorithms</Name>

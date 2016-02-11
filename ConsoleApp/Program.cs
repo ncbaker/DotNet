@@ -5,6 +5,7 @@ using System.Linq;
 using ProgrammingProblems.DataStructures;
 using StringBuilder = System.Text.StringBuilder;
 using ProgrammingProblems.Algorithms;
+using AI;
 
 namespace ProgrammingProblems.ConsoleApp
 {
@@ -13,7 +14,9 @@ namespace ProgrammingProblems.ConsoleApp
 
         static void Main(string[] args)
         {
-            SearchAlgorithms.icecreamParlorMain();
+            BotBuilding.displayPathtoPrincess(3, new String[] { "---","-m-","p--"});
+            BotBuilding.savesPrincessMain();
+            //SearchAlgorithms.icecreamParlorMain();
 
             //int a = BitManipulation.lonelyinteger(new int[] { 0, 2, 0, 1, 2 });
 
